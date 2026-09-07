@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sai Chethan R | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container nav-container">
+            <a href="#" class="logo">Sai Chethan R</a>
+            <nav class="nav-links">
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <button id="theme-toggle" aria-label="Toggle theme">
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="hero-section">
+            <div class="container hero-content">
+                <p class="hero-greeting">Hello, world. I'm</p>
+                <h1 class="hero-title">Sai Chethan R</h1>
+                <p class="hero-subtitle">Undergraduate Actuarial Data Science Student & Software Developer</p>
+                <p class="hero-description">Exploring data science, machine learning, and cybersecurity.</p>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn primary-btn">View Projects</a>
+                    <a href="#contact" class="btn secondary-btn">Get in Touch</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p>I am an undergraduate student pursuing Actuarial Data Science at Sri Sathya Sai Institute of Higher Learning (SSSIHL). My interests span across data analytics, machine learning modeling, and cybersecurity concepts.</p>
+                        <p>I enjoy building software solutions, exploring algorithmic problem-solving, and working with development tools across multiple languages.</p>
+                    </div>
+                    <div class="about-highlights">
+                        <div class="highlight-card">
+                            <h3>Focus Areas</h3>
+                            <p>Data Science, Machine Learning, Cybersecurity, Actuarial Mathematics</p>
+                        </div>
+                        <div class="highlight-card">
+                            <h3>Tech Stack</h3>
+                            <p>Python, C++, SQL, HTML/CSS/JavaScript, PyTorch, Git & Bash</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section bg-alt">
+            <div class="container">
+                <h2 class="section-title">Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Deepfake Detection System</h3>
+                            <span class="project-tag">Machine Learning</span>
+                        </div>
+                        <p>Built a deep learning pipeline using PyTorch, ADDNet-2D architecture, and Grad-CAM for identifying manipulated media as part of hackathon development.</p>
+                        <div class="project-footer">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">PyTorch</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Cybersecurity Lab Notebook</h3>
+                            <span class="project-tag">Security</span>
+                        </div>
+                        <p>Documentation and practical implementation of penetration testing methodologies, network scanning, and vulnerability assessments using Nmap and Wireshark.</p>
+                        <div class="project-footer">
+                            <span class="tech-badge">Linux</span>
+                            <span class="tech-badge">Networking</span>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Actuarial Risk & Loss Models</h3>
+                            <span class="project-tag">Analytics</span>
+                        </div>
+                        <p>Scripts and analytical models for computing probability distributions, loss models, and risk evaluation parameters.</p>
+                        <div class="project-footer">
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">Statistics</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+            <div class="container">
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Languages</h3>
+                        <ul class="skill-list">
+                            <li>Python</li>
+                            <li>C++</li>
+                            <li>SQL</li>
+                            <li>JavaScript / HTML / CSS</li>
+                            <li>Bash</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Tools & Frameworks</h3>
+                        <ul class="skill-list">
+                            <li>PyTorch / Scikit-Learn</li>
+                            <li>Git & GitHub</li>
+                            <li>Linux / Kali</li>
+                            <li>VS Code</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Core Concepts</h3>
+                        <ul class="skill-list">
+                            <li>Actuarial Mathematics</li>
+                            <li>Machine Learning</li>
+                            <li>Cybersecurity Fundamentals</li>
+                            <li>Data Structures & Algorithms</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section bg-alt">
+            <div class="container contact-container">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="contact-text">Feel free to reach out via email or connect with me on GitHub and LinkedIn.</p>
+                <div class="contact-links">
+                    <a href="mailto:rsaichethan@gmail.com" class="btn primary-btn">Email Me</a>
+                    <a href="https://github.com" target="_blank" rel="noopener" class="btn secondary-btn">GitHub</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 Sai Chethan R. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
