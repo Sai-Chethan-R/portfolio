@@ -11,28 +11,38 @@
 </head>
 <body>
     <header class="site-header">
+        <div class="scroll-progress" id="scroll-progress"></div>
         <div class="container nav-container">
-            <a href="#" class="logo">Sai Chethan R</a>
-            <nav class="nav-links">
+            <a href="#hero" class="logo">Sai Chethan R</a>
+            <nav class="nav-links" id="nav-links">
                 <a href="#about">About</a>
                 <a href="#projects">Projects</a>
                 <a href="#skills">Skills</a>
                 <a href="#contact">Contact</a>
             </nav>
-            <button id="theme-toggle" aria-label="Toggle theme">
-                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-            </button>
+            <div class="nav-controls">
+                <button id="theme-toggle" aria-label="Toggle theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+                <button id="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
         </div>
     </header>
 
     <main>
         <section id="hero" class="hero-section">
+            <canvas id="hero-canvas" aria-hidden="true"></canvas>
             <div class="container hero-content">
                 <p class="hero-greeting">Hello, world. I'm</p>
                 <h1 class="hero-title">Sai Chethan R</h1>
-                <p class="hero-subtitle">Undergraduate Actuarial Data Science Student & Software Developer</p>
-                <p class="hero-description">Exploring data science, machine learning, and cybersecurity.</p>
+                <p class="hero-subtitle">
+                    Undergraduate Actuarial Data Science Student, focused on
+                    <span id="role-cycle" class="role-cycle">machine learning</span>
+                </p>
+                <p class="hero-description">Building models, breaking (and securing) systems, and studying risk.</p>
                 <div class="hero-actions">
                     <a href="#projects" class="btn primary-btn">View Projects</a>
                     <a href="#contact" class="btn secondary-btn">Get in Touch</a>
@@ -65,75 +75,113 @@
         <section id="projects" class="section bg-alt">
             <div class="container">
                 <h2 class="section-title">Projects</h2>
+                <div class="project-filters" role="group" aria-label="Filter projects by category">
+                    <button class="filter-btn is-active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="Machine Learning">Machine Learning</button>
+                    <button class="filter-btn" data-filter="Security">Security</button>
+                    <button class="filter-btn" data-filter="Analytics">Analytics</button>
+                </div>
                 <div class="projects-grid">
-                    <div class="project-card">
+                    <article class="project-card" data-category="Machine Learning">
                         <div class="project-header">
                             <h3>Deepfake Detection System</h3>
                             <span class="project-tag">Machine Learning</span>
                         </div>
                         <p>Built a deep learning pipeline using PyTorch, ADDNet-2D architecture, and Grad-CAM for identifying manipulated media as part of hackathon development.</p>
-                        <div class="project-footer">
-                            <span class="tech-badge">Python</span>
-                            <span class="tech-badge">PyTorch</span>
+                        <div class="project-details">
+                            <ul>
+                                <li>ADDNet-2D backbone trained on labeled real/fake frame data</li>
+                                <li>Grad-CAM overlays to visualize which regions drove each prediction</li>
+                                <li>Built end-to-end during a hackathon under a fixed time limit</li>
+                            </ul>
                         </div>
-                    </div>
+                        <div class="project-footer">
+                            <div class="tech-badges">
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">PyTorch</span>
+                            </div>
+                            <button class="details-toggle" aria-expanded="false">Details <span class="chevron">&#8964;</span></button>
+                        </div>
+                    </article>
 
-                    <div class="project-card">
+                    <article class="project-card" data-category="Security">
                         <div class="project-header">
                             <h3>Cybersecurity Lab Notebook</h3>
                             <span class="project-tag">Security</span>
                         </div>
                         <p>Documentation and practical implementation of penetration testing methodologies, network scanning, and vulnerability assessments using Nmap and Wireshark.</p>
-                        <div class="project-footer">
-                            <span class="tech-badge">Linux</span>
-                            <span class="tech-badge">Networking</span>
+                        <div class="project-details">
+                            <ul>
+                                <li>Reconnaissance and port scanning workflows built around Nmap</li>
+                                <li>Packet-level traffic analysis and inspection with Wireshark</li>
+                                <li>Written up as a running lab notebook of methodology and findings</li>
+                            </ul>
                         </div>
-                    </div>
+                        <div class="project-footer">
+                            <div class="tech-badges">
+                                <span class="tech-badge">Linux</span>
+                                <span class="tech-badge">Networking</span>
+                            </div>
+                            <button class="details-toggle" aria-expanded="false">Details <span class="chevron">&#8964;</span></button>
+                        </div>
+                    </article>
 
-                    <div class="project-card">
+                    <article class="project-card" data-category="Analytics">
                         <div class="project-header">
                             <h3>Actuarial Risk & Loss Models</h3>
                             <span class="project-tag">Analytics</span>
                         </div>
                         <p>Scripts and analytical models for computing probability distributions, loss models, and risk evaluation parameters.</p>
-                        <div class="project-footer">
-                            <span class="tech-badge">Python</span>
-                            <span class="tech-badge">Statistics</span>
+                        <div class="project-details">
+                            <ul>
+                                <li>Probability distribution fitting for claim frequency and severity</li>
+                                <li>Loss modeling scripts for estimating expected risk exposure</li>
+                                <li>Applied coursework from actuarial mathematics to working code</li>
+                            </ul>
                         </div>
-                    </div>
+                        <div class="project-footer">
+                            <div class="tech-badges">
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">Statistics</span>
+                            </div>
+                            <button class="details-toggle" aria-expanded="false">Details <span class="chevron">&#8964;</span></button>
+                        </div>
+                    </article>
                 </div>
+                <p class="filter-empty" id="filter-empty" hidden>No projects in this category yet.</p>
             </div>
         </section>
 
         <section id="skills" class="section">
             <div class="container">
                 <h2 class="section-title">Technical Skills</h2>
+                <p class="skills-hint">Click a skill to see it in action below.</p>
                 <div class="skills-grid">
                     <div class="skill-category">
                         <h3>Languages</h3>
                         <ul class="skill-list">
-                            <li>Python</li>
+                            <li data-skill="Python" tabindex="0" role="button">Python</li>
                             <li>C++</li>
                             <li>SQL</li>
                             <li>JavaScript / HTML / CSS</li>
-                            <li>Bash</li>
+                            <li data-skill="Linux" tabindex="0" role="button">Bash</li>
                         </ul>
                     </div>
                     <div class="skill-category">
                         <h3>Tools & Frameworks</h3>
                         <ul class="skill-list">
-                            <li>PyTorch / Scikit-Learn</li>
+                            <li data-skill="PyTorch" tabindex="0" role="button">PyTorch / Scikit-Learn</li>
                             <li>Git & GitHub</li>
-                            <li>Linux / Kali</li>
+                            <li data-skill="Linux" tabindex="0" role="button">Linux / Kali</li>
                             <li>VS Code</li>
                         </ul>
                     </div>
                     <div class="skill-category">
                         <h3>Core Concepts</h3>
                         <ul class="skill-list">
-                            <li>Actuarial Mathematics</li>
-                            <li>Machine Learning</li>
-                            <li>Cybersecurity Fundamentals</li>
+                            <li data-skill="Statistics" tabindex="0" role="button">Actuarial Mathematics</li>
+                            <li data-skill="PyTorch" tabindex="0" role="button">Machine Learning</li>
+                            <li data-skill="Networking" tabindex="0" role="button">Cybersecurity Fundamentals</li>
                             <li>Data Structures & Algorithms</li>
                         </ul>
                     </div>
@@ -148,6 +196,7 @@
                 <div class="contact-links">
                     <a href="mailto:rsaichethan@gmail.com" class="btn primary-btn">Email Me</a>
                     <a href="https://github.com" target="_blank" rel="noopener" class="btn secondary-btn">GitHub</a>
+                    <button id="copy-email" class="btn secondary-btn" type="button" data-email="rsaichethan@gmail.com">Copy Email</button>
                 </div>
             </div>
         </section>
@@ -158,6 +207,9 @@
             <p>&copy; 2026 Sai Chethan R. All rights reserved.</p>
         </div>
     </footer>
+
+    <button id="back-to-top" aria-label="Back to top">&#8593;</button>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
     <script src="script.js"></script>
 </body>
